@@ -47,6 +47,7 @@ $num = $db->numRows($res);
 if ($num == 1){
     $response['success'] = false;
     $response['message'] = "Email ID Already Registered";
+    $response['data'] = NULL;
     print_r(json_encode($response));
 }
 else{

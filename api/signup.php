@@ -30,9 +30,16 @@ if (empty($_POST['password'])) {
     print_r(json_encode($response));
     return false;
 }
+if (empty($_POST['gender'])) {
+    $response['success'] = false;
+    $response['message'] = "Gender is Empty";
+    print_r(json_encode($response));
+    return false;
+}
 $name = $db->escapeString($_POST['name']);
 $email = $db->escapeString($_POST['email']);
 $password = $db->escapeString($_POST['password']);
+$gender = $db->escapeString($_POST['gender']);
 $sql = "SELECT * FROM users WHERE email ='$email'";
 $db->sql($sql);
 $res = $db->getResult();
@@ -43,7 +50,7 @@ if ($num == 1){
     print_r(json_encode($response));
 }
 else{
-    $sql = "INSERT INTO users(`name`,`email`,`password`)VALUES('$name','$email','$password')";
+    $sql = "INSERT INTO users(`name`,`email`,`password`,`gender`)VALUES('$name','$email','$password','$gender')";
     $db->sql($sql);
     $res = $db->getResult();
     $sql = "SELECT * FROM users WHERE email ='$email'";

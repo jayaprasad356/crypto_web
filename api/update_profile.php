@@ -16,6 +16,18 @@ if (empty($_POST['user_id'])) {
     print_r(json_encode($response));
     return false;
 }
+if (empty($_POST['name'])) {
+    $response['success'] = false;
+    $response['message'] = "Name is Empty";
+    print_r(json_encode($response));
+    return false;
+}
+if (empty($_POST['email'])) {
+    $response['success'] = false;
+    $response['message'] = "Email is Empty";
+    print_r(json_encode($response));
+    return false;
+}
 $user_id = $db->escapeString($_POST['user_id']);
 $name = (isset($_POST['name']) && !empty(trim($_POST['name']))) ? $db->escapeString(trim($_POST['name'])) : '';
 $email = (isset($_POST['email']) && !empty(trim($_POST['email']))) ? $db->escapeString(trim($_POST['email'])) : '';

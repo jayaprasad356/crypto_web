@@ -38,7 +38,7 @@ if ($num == 1){
     $response['data'] = $res;
 }
 else{
-    $response['success'] = true;
+    $response['success'] = false;
     $response['message'] = "User Not Found";
 
 }

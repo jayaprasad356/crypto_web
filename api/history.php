@@ -17,7 +17,7 @@ if (empty($_POST['month'])) {
     return false;
 }
 $month= $db->escapeString($_POST['month']);
-$sql = "SELECT * FROM steps where substring(date, 9, 2) = $month ";
+$sql = "SELECT * FROM steps where substring(date, 9, 2) = $month ORDER BY date DESC";
 $db->sql($sql);
 $res = $db->getResult();
 $num = $db->numRows($res);

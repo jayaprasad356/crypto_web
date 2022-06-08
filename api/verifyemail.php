@@ -28,7 +28,7 @@ if ($num == 1){
     print_r(json_encode($response));
 }
 else{
-    $from ="verify@makein.store";
+    $from ="verify@greymatterworks.in";
     $subject="verify-account-otp";
     $otp=rand(100000,999999);
     $message=strval($otp);

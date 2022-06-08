@@ -10,7 +10,6 @@ date_default_timezone_set('Asia/Kolkata');
 
 
 include_once('../includes/crud.php');
-
 $db = new Database();
 $db->connect();
 
@@ -48,7 +47,7 @@ $db->sql($sql);
 $res = $db->getResult();
 $num = $db->numRows($res);
 if ($num == 1){
-    $sql = "INSERT INTO steps(`user_id`,`date`,`steps`,`calories`)VALUES('$user_id','$date','$steps','$calories')";
+    $sql = "INSERT INTO steps(`user_id`,`date`,`steps`,`calories`,`earn`)VALUES('$user_id','$date','$steps','$calories','$steps')";
     $db->sql($sql);
     $response['success'] = true;
     $response['message'] = "Steps Saved Successfully";
@@ -58,8 +57,6 @@ else{
     $response['success'] = false;
     $response['message'] = "User Not Found";
     print_r(json_encode($response));
-
-
 }
 
 

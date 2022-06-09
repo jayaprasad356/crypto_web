@@ -29,6 +29,7 @@ if ($num > 0) {
 } else {
     $response['success'] = false;
     $response['message'] = "No Data Found";
+    $response['data'] = $res;
     print_r(json_encode($response));
 }
 

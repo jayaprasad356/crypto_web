@@ -27,8 +27,9 @@ $user_id= $db->escapeString($_POST['user_id']);
 $type= $db->escapeString($_POST['type']);
 
 if($type == 'weekly'){
-    $fromdate = date( 'Y-m-d', strtotime( 'sunday this week' ) );
-    $todate = date('Y-m-d', strtotime($fromdate. ' + 6 days'));
+    $day = date('w');
+    $fromdate = date('Y-m-d', strtotime('-'.$day.' days'));
+    $todate = date('Y-m-d', strtotime('+'.(6-$day).' days'));
     $sql = "SELECT SUM(steps) AS steps,SUM(calories) AS calories FROM steps WHERE user_id = '$user_id' AND date BETWEEN '$fromdate' and '$todate'";
     $db->sql($sql);
     $res = $db->getResult();

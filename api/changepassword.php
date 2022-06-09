@@ -22,22 +22,38 @@ if (empty($_POST['password'])) {
     print_r(json_encode($response));
     return false;
 }
+if (empty($_POST['oldpassword'])) {
+    $response['success'] = false;
+    $response['message'] = "Old Password is Empty";
+    print_r(json_encode($response));
+    return false;
+}
 
 $user_id = $db->escapeString($_POST['user_id']);
 $password = $db->escapeString($_POST['password']);
+$oldpassword = $db->escapeString($_POST['oldpassword']);
 $sql = "SELECT * FROM users WHERE id = '" . $user_id . "'";
 $db->sql($sql);
 $res = $db->getResult();
 $num = $db->numRows($res);
 if ($num == 1) {
-    $sql = "UPDATE `users` SET `password`='$password' WHERE id=" . $user_id;
-    $db->sql($sql);
-    $sql = "SELECT * FROM users WHERE id = '" . $user_id . "'";
-    $db->sql($sql);
-    $res = $db->getResult();
-    $response['success'] = true;
-    $response['message'] = "Updated Successfully";
-    $response['data'] = $res;
+    $op = $res[0]['password'];
+    if ($op == $oldpassword) {
+        $sql = "UPDATE `users` SET `password`='$password' WHERE id=" . $user_id;
+        $db->sql($sql);
+        $sql = "SELECT * FROM users WHERE id = '" . $user_id . "'";
+        $db->sql($sql);
+        $res = $db->getResult();
+        $response['success'] = true;
+        $response['message'] = "Updated Successfully";
+        $response['data'] = $res;
+    } else {
+        $response['success'] = false;
+        $response['message'] = "Old Password is Wrong";
+        print_r(json_encode($response));
+        return false;
+    }
+
 
 }
 else{

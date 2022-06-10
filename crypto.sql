@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2022 at 11:08 PM
+-- Generation Time: Jun 11, 2022 at 12:00 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `crypto`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notifications`
+--
+
+CREATE TABLE `notifications` (
+  `id` int(11) NOT NULL,
+  `title` text DEFAULT NULL,
+  `description` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `notifications`
+--
+
+INSERT INTO `notifications` (`id`, `title`, `description`) VALUES
+(1, 'hi', 'gello'),
+(2, 'hello', 'how are you'),
+(3, 'hi', 'helllo');
 
 -- --------------------------------------------------------
 
@@ -103,6 +124,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `gender`, `weight`, `hei
 --
 
 --
+-- Indexes for table `notifications`
+--
+ALTER TABLE `notifications`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `reward_settings`
 --
 ALTER TABLE `reward_settings`
@@ -123,6 +150,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `notifications`
+--
+ALTER TABLE `notifications`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `reward_settings`

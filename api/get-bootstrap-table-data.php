@@ -30,10 +30,17 @@ header("Pragma: no-cache");
 
 
 
-include_once('../includes/crud.php');
 
+include_once('../includes/crud.php');
+;
 $db = new Database();
 $db->connect();
+
+
+
+
+
+
 
 
 
@@ -112,6 +119,25 @@ if (isset($_GET['table']) && $_GET['table'] == 'users')
     }
     $bulkData['rows'] = $rows;
     print_r(json_encode($bulkData));
+}
+if (isset($_GET['table']) && $_GET['table'] == 'notifications') {
+    $where = '';
+    
+    $sql = "SELECT * FROM notifications";
+    $db->sql($sql);
+    $res = $db->getResult();
+    $rows = array();
+    $tempRow = array();
+    foreach ($res as $row) {
+
+        
+        $tempRow['id'] = $row['id'];
+        $tempRow['title'] = $row['title'];
+        $tempRow['description'] = $row['description'];
+        $rows[] = $tempRow;
+    }
+$bulkData['rows'] = $rows;
+print_r(json_encode($bulkData));
 }
 
 

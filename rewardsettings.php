@@ -20,6 +20,15 @@ include "header.php"; ?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Crypto Web Login</title>
+    <style>
+        
+.box-body{
+    background-color:#ac94d3!important;
+}
+.box-footer{
+    background-color:#ac94d3!important;
+}
+
     </style>
 </head>
 

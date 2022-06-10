@@ -138,7 +138,7 @@ if (isset($_POST['btnUpdate'])){
     <h1>Reward settings</h1>
     <?php echo isset($error['add_menu']) ? $error['add_menu'] : ''; ?>
     <ol class="breadcrumb">
-        <li><a href="home.php"><i class="fa fa-home"></i> Home</a></li>
+        <li><a style="color:black!important;" href="home.php"><i class="fa fa-home"></i> Home</a></li>
     </ol>
 
 </section>
@@ -161,12 +161,12 @@ if (isset($_POST['btnUpdate'])){
                         <div class="row">
                             <div class="form-group">
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label>
+                                    <label for="exampleInputEmail1">value1</label>
                                     <input type="text" value="2000"class="form-control" name="value1" readonly>
                                 </div>
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label> 
-                                    <input type="text" class="form-control" name="reward1" required>
+                                    <label  for="exampleInputEmail1">reward1</label> 
+                                    <input style="border:2px solid #a8e88a!important;border-radius:8px" type="text" class="form-control" name="reward1" required>
                                 </div>
                             </div>
 
@@ -174,12 +174,12 @@ if (isset($_POST['btnUpdate'])){
                         <div class="row">
                             <div class="form-group">
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label>
+                                    <label for="exampleInputEmail1">value2</label>
                                     <input type="text" value="4000"class="form-control" name="value2" readonly>
                                 </div>
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label> 
-                                    <input type="text" class="form-control"  name="reward2" required >
+                                    <label for="exampleInputEmail1">reward2</label> 
+                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px"  name="reward2" required >
                                 </div>
                             </div>
 
@@ -187,96 +187,96 @@ if (isset($_POST['btnUpdate'])){
                         <div class="row">
                             <div class="form-group">
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label>
+                                    <label for="exampleInputEmail1">value3</label>
                                     <input type="text" value="6000"class="form-control" name="value3" readonly>
                                 </div>
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label> 
-                                    <input type="text" class="form-control"  name="reward3" required>
+                                    <label for="exampleInputEmail1">reward3</label> 
+                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward3" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label>
+                                    <label for="exampleInputEmail1">value4</label>
                                     <input type="text" value="8000"class="form-control" name="value4" readonly>
                                 </div>
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label> 
-                                    <input type="text" class="form-control"  name="reward4" required>
+                                    <label for="exampleInputEmail1">reward4</label> 
+                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward4" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label>
+                                    <label for="exampleInputEmail1">value5</label>
                                     <input type="text" value="10000"class="form-control" name="value5" readonly>
                                 </div>
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label> 
-                                    <input type="text" class="form-control"  name="reward5" required>
+                                    <label for="exampleInputEmail1">reward5</label> 
+                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward5" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label>
+                                    <label for="exampleInputEmail1">value6</label>
                                     <input type="text" value="12000"class="form-control" name="value6" readonly>
                                 </div>
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label> 
-                                    <input type="text" class="form-control"  name="reward6" required >
+                                    <label for="exampleInputEmail1">reward6</label> 
+                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward6" required >
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label>
+                                    <label for="exampleInputEmail1">value7</label>
                                     <input type="text" value="14000"class="form-control" name="value7" readonly>
                                 </div>
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label> 
-                                    <input type="text" class="form-control"  name="reward7" required>
+                                    <label for="exampleInputEmail1">reward7</label> 
+                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward7" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label>
+                                    <label for="exampleInputEmail1">value8</label>
                                     <input type="text" value="16000"class="form-control" name="value8" readonly>
                                 </div>
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label> 
-                                    <input type="text" class="form-control"  name="reward8" required >
+                                    <label for="exampleInputEmail1">reward8</label> 
+                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px"  name="reward8" required >
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label>
+                                    <label for="exampleInputEmail1">value9</label>
                                     <input type="text" value="18000"class="form-control" name="value9" readonly>
                                 </div>
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label> 
-                                    <input type="text" class="form-control"  name="reward9" required>
+                                    <label for="exampleInputEmail1">reward9</label> 
+                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward9" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label>
+                                    <label for="exampleInputEmail1">value10</label>
                                     <input type="text" value="20000"class="form-control" name="value10" readonly >
                                 </div>
                                 <div class='col-md-4'>
-                                    <label for="exampleInputEmail1"></label> 
-                                    <input type="text" class="form-control"  name="reward10" required>
+                                    <label for="exampleInputEmail1">reward10</label> 
+                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward10" required>
                                 </div>
                             </div>
                         </div>

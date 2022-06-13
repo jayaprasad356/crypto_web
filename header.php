@@ -93,6 +93,9 @@ $db->sql("SET NAMES 'utf8'");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js" integrity="sha256-CtKylYan+AJuoH8jrMht1+1PMhMqrKnB8K5g012WN5I=" crossorigin="anonymous"></script>
  
  <style>
+nav{
+        background-color: #ac94d3!important;
+}
 aside {
     background-color: #ac94d3!important;
 }
@@ -116,25 +119,24 @@ li a{
 
 </head>
 
-<body class="hold-transition skin-blue fixed sidebar-mini">
+<body class="hold-transition fixed sidebar-mini">
     <div class="wrapper">
         
         <header class="main-header">
             <!-- Logo -->
-            <a href="home.php" class="logo">
+            <a style="color:white;font-weight:bold;background-color:#3674b3;" href="home.php" class="logo">
                 
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">
-                    <img src="./img/sminilogo.png"  alt="User Image">
-                    
+                <span  class="logo-mini">
+                    Admin
                 </span>
                 <!-- logo for regular state and mobile devices -->
-                <img src="./img/slogo.png"  alt="User Image">
+                
                 
                 <span class="logo-lg">
                 
                     
-                    <h3>User</h3>
+                    <h3>Admin</h3>
                 </span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
@@ -158,7 +160,7 @@ li a{
                                         <img src="./img/logo.png" class="img-circle" alt="User Image">
                                         <p>
                                             
-                                            <small><?php echo $_SESSION['email'] ?></small>
+                                            <small style="color:black;"><?php echo $_SESSION['email'] ?></small>
                                         </p>
                                     </li>
                                     <li class="user-footer">
@@ -209,6 +211,12 @@ li a{
                         <li><a href="add-notification.php"><i class="fa fa-sliders"></i> Add Notification</a></li>
                         <li><a href="notifications.php"><i class="fa fa-sliders"></i> Manage Notifications</a></li>
                     </ul>
+                </li>
+                <li class="treeview">
+                    <a href="settings.php">
+                        <i class="fa fa-bullseye"></i>
+                        <span>Settings</span>
+                    </a>
                 </li>
                 </ul>
             </section>

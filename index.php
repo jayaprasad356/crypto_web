@@ -12,7 +12,7 @@ $db->connect();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Gold Administrator</title>
+    <title>Crypto Web Administrator</title>
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -36,6 +36,24 @@ $db->connect();
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker-bs3.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+<style>
+        body{
+            background-color: #ac94d3!important;
+        }
+        .box{
+            background-color: #ac94d3!important;
+        }
+        .box-footer{
+            background-color: #ac94d3!important;
+        }     
+        .btn{
+        position:fixed;
+        left:45%;
+        right:30%;
+        width:10%;
+        }
+</style>
 
 </head>
 <body>

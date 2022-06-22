@@ -6,7 +6,8 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 header("Cache-Control: no-store, no-cache, must-revalidate");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
-
+date_default_timezone_set('Asia/Kolkata');
+echo date('d-m-Y');
 
 include_once('../includes/crud.php');
 $db = new Database();
@@ -40,6 +41,7 @@ $name = $db->escapeString($_POST['name']);
 $email = $db->escapeString($_POST['email']);
 $password = $db->escapeString($_POST['password']);
 $gender = $db->escapeString($_POST['gender']);
+$registered_date =date("Y-m-d");
 $sql = "SELECT * FROM users WHERE email ='$email'";
 $db->sql($sql);
 $res = $db->getResult();
@@ -51,7 +53,7 @@ if ($num == 1){
     print_r(json_encode($response));
 }
 else{
-    $sql = "INSERT INTO users(`name`,`email`,`password`,`gender`)VALUES('$name','$email','$password','$gender')";
+    $sql = "INSERT INTO users(`name`,`email`,`password`,`gender`,`registered_date`)VALUES('$name','$email','$password','$gender','$registered_date')";
     $db->sql($sql);
     $res = $db->getResult();
     $sql = "SELECT * FROM users WHERE email ='$email'";
@@ -62,6 +64,7 @@ else{
         $temp['name'] = $row['name'];
         $temp['email'] = $row['email'];
         $temp['password'] = $row['password'];
+        $temp['registered_date'] = $row['registered_date'];
         $rows[] = $temp;
     }
     $response['success'] = true;

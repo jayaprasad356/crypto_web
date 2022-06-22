@@ -24,34 +24,45 @@ $num = $db->numRows($res);
 if ($num == 1){
     $response['success'] = false;
     $response['message'] = "Email ID Already Registered";
-    $response['data'] = NULL;
+    $response['data'] = $res;
     print_r(json_encode($response));
 }
 else{
-    $from ="verify@greymatterworks.in";
-    $subject="verify-account-otp";
-    $otp=rand(100000,999999);
-    $message=strval($otp);
-    $headers="From:" .$from;
-    if(mail($email,$subject,$message,$headers)){
-        $response['success'] = true;
-        $response['message'] = "OTP Sent Successfully";
-        $response['otp'] = $otp;
-        $response['data'] = NULL;
-        print_r(json_encode($response));
+    $sql = "SELECT * FROM users";
+    $db->sql($sql);
+    $res = $db->getResult();
+    $num = $db->numRows($res);
+    $sql = "SELECT * FROM settings";
+    $db->sql($sql);
+    $res = $db->getResult();
+    $max_user =$res[0]['max_user'];
+    if($num >=$max_user){
+            $response['success'] = false;
+            $response['message'] = "Maximum users reached";
+            $response['data'] = $num;
+            print_r(json_encode($response));
     }
-    else{
-        $response['success'] = false;
-        $response['message'] = "OTP Sent Failed";
-        $response['data'] = NULL;
-        print_r(json_encode($response));
+    else{ 
+        $from ="verify@greymatterworks.in";
+        $subject="verify-account-otp";
+        $otp=rand(100000,999999);
+        $message=strval($otp);
+        $headers="From:" .$from;
+        if(mail($email,$subject,$message,$headers)){
+            $response['success'] = true;
+            $response['message'] = "OTP Sent Successfully";
+            $response['otp'] = $otp;
+            $response['data'] = NULL;
+            print_r(json_encode($response));
+        }
+        else{
+            $response['success'] = false;
+            $response['message'] = "OTP Sent Failed";
+            $response['data'] = NULL;
+            print_r(json_encode($response));
 
+        }   
     }
-
-
-
 }
-   
-
 
 ?>

@@ -38,7 +38,7 @@ include "header.php";
             <h1>Home</h1>
             <ol class="breadcrumb">
                 <li>
-                    <a href="home.php"> <i class="fa fa-home"></i> Home</a>
+                    <a style="color:black!important;" href="home.php"> <i class="fa fa-home"></i> Home</a>
                 </li>
             </ol>
 

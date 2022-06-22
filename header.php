@@ -12,7 +12,7 @@ $db->sql("SET NAMES 'utf8'");
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/ico" href="../img/logo.png">
+    <link rel="icon" type="image/ico" href="img/logo.png">
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -91,37 +91,52 @@ $db->sql("SET NAMES 'utf8'");
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css" integrity="sha256-tBxlolRHP9uMsEFKVk+hk//ekOlXOixLKvye5W2WR5c=" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js" integrity="sha256-CtKylYan+AJuoH8jrMht1+1PMhMqrKnB8K5g012WN5I=" crossorigin="anonymous"></script>
+ 
  <style>
-    aside {
-    background-color: rgb(70, 225, 215) !important;
+nav{
+        background-color: #ac94d3!important;
+}
+aside {
+    background-color: #ac94d3!important;
 }
 li a{
-    color:red!important;
+    color:white!important;
     font-weight:bold!important;
-    font-size:18px!important;
+    font-size:16px!important;
 }
+.sidebar-menu{
+    padding-top:1rem;
+    padding-bottom:1rem;
+}
+.sidebar-menu a.active{
+    background-color:#cdd015!important;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    border-radius:30px 0px 0px 30px;
+}
+
  </style>
+
 </head>
 
-<body class="hold-transition skin-blue fixed sidebar-mini">
+<body class="hold-transition fixed sidebar-mini">
     <div class="wrapper">
         
         <header class="main-header">
             <!-- Logo -->
-            <a href="home.php" class="logo">
+            <a style="color:white;font-weight:bold;background-color:#3674b3;" href="home.php" class="logo">
                 
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">
-                    <img src="./img/sminilogo.png"  alt="User Image">
-                    
+                <span  class="logo-mini">
+                    Admin
                 </span>
                 <!-- logo for regular state and mobile devices -->
-                <img src="./img/slogo.png"  alt="User Image">
+                
                 
                 <span class="logo-lg">
                 
                     
-                    <h3>User</h3>
+                    <h3>Admin</h3>
                 </span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
@@ -145,7 +160,7 @@ li a{
                                         <img src="./img/logo.png" class="img-circle" alt="User Image">
                                         <p>
                                             
-                                            <small><?php echo $_SESSION['email'] ?></small>
+                                            <small style="color:black;"><?php echo $_SESSION['email'] ?></small>
                                         </p>
                                     </li>
                                     <li class="user-footer">
@@ -171,8 +186,8 @@ li a{
             
                 <ul class="sidebar-menu">
                     <li class="treeview">
-                        <a href="home.php">
-                            <i class="fa fa-home" class="active"></i> <span>Home</span>
+                        <a class="active" href="home.php">
+                            <i class="fa fa-home" ></i> <span>Home</span>
                         </a>
                     </li>
                     <li class="treeview">
@@ -185,6 +200,24 @@ li a{
                             <i class="fa fa-user"></i><span>Reward Settings</span>  
                         </a>
                     </li>
+                    </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-bullseye"></i>
+                        <span>Notifications</span>
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="add-notification.php"><i class="fa fa-sliders"></i> Add Notification</a></li>
+                        <li><a href="notifications.php"><i class="fa fa-sliders"></i> Manage Notifications</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="settings.php">
+                        <i class="fa fa-bullseye"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
                 </ul>
             </section>
             <!-- /.sidebar -->

@@ -37,7 +37,7 @@ $db->connect();
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-<style>
+<!-- <style>
         body{
             background-color: #ac94d3!important;
         }
@@ -53,7 +53,7 @@ $db->connect();
         right:30%;
         width:10%;
         }
-</style>
+</style> -->
 
 </head>
 <body>

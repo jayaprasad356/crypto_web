@@ -29,8 +29,8 @@
                                     <th data-field="height" data-sortable="true">Height</th>
                                     <th data-field="weight" data-sortable="true">Weight</th>
                                     <th data-field="age" data-sortable="true">Age</th>
-                                    <th data-field="operate" data-events="actionEvents">Action</th>
-                                    
+                                    <!-- <th data-field="operate" data-events="actionEvents">Action</th>
+                                     -->
                                     
                                     
                                 </tr>

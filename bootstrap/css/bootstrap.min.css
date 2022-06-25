@@ -3345,7 +3345,7 @@ fieldset[disabled] .btn-success:hover {
 }
 .btn-info {
     color: #fff;
-    background-color: #3e2723;
+    background-color: #5bc0de;
     border-color: #46b8da
 }
 .btn-info.focus,
@@ -3402,11 +3402,11 @@ fieldset[disabled] .btn-info.focus,
 fieldset[disabled] .btn-info:active,
 fieldset[disabled] .btn-info:focus,
 fieldset[disabled] .btn-info:hover {
-    background-color: #3e2723;
+    background-color: #5bc0de;
     border-color: #46b8da
 }
 .btn-info .badge {
-    color: #3e2723;
+    color: #5bc0de;
     background-color: #fff
 }
 .btn-warning {
@@ -5027,7 +5027,7 @@ a.label:hover {
     background-color: #449d44
 }
 .label-info {
-    background-color: #3e2723
+    background-color: #5bc0de
 }
 .label-info[href]:focus,
 .label-info[href]:hover {
@@ -5306,7 +5306,7 @@ a.thumbnail:hover {
     background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
 }
 .progress-bar-info {
-    background-color: #3e2723
+    background-color: #5bc0de
 }
 .progress-striped .progress-bar-info {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);

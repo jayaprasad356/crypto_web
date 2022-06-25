@@ -132,6 +132,11 @@ if (isset($_POST['btnUpdate'])){
     }
 }
 
+$sql = "SELECT * FROM `reward_settings`";
+$db->sql($sql);
+$res = $db->getResult();
+
+
 
 ?>
 <section class="content-header">
@@ -166,7 +171,7 @@ if (isset($_POST['btnUpdate'])){
                                 </div>
                                 <div class='col-md-4'>
                                     <label  for="exampleInputEmail1">reward1</label> 
-                                    <input style="border:2px solid #a8e88a!important;border-radius:8px" type="text" class="form-control" name="reward1" required>
+                                    <input  type="text" class="form-control" name="reward1" value="<?php echo $res[0]['reward']?>" required>
                                 </div>
                             </div>
 
@@ -179,7 +184,7 @@ if (isset($_POST['btnUpdate'])){
                                 </div>
                                 <div class='col-md-4'>
                                     <label for="exampleInputEmail1">reward2</label> 
-                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px"  name="reward2" required >
+                                    <input type="text" class="form-control"  name="reward2" value="<?php echo $res[1]['reward']?>" required >
                                 </div>
                             </div>
 
@@ -192,7 +197,7 @@ if (isset($_POST['btnUpdate'])){
                                 </div>
                                 <div class='col-md-4'>
                                     <label for="exampleInputEmail1">reward3</label> 
-                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward3" required>
+                                    <input type="text" class="form-control"  name="reward3" value="<?php echo $res[2]['reward']?>" required>
                                 </div>
                             </div>
                         </div>
@@ -200,11 +205,11 @@ if (isset($_POST['btnUpdate'])){
                             <div class="form-group">
                                 <div class='col-md-4'>
                                     <label for="exampleInputEmail1">value4</label>
-                                    <input type="text" value="8000"class="form-control" name="value4" readonly>
+                                    <input type="text" value="8000"class="form-control" name="value4"  readonly>
                                 </div>
                                 <div class='col-md-4'>
                                     <label for="exampleInputEmail1">reward4</label> 
-                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward4" required>
+                                    <input type="text" class="form-control"  name="reward4" value="<?php echo $res[3]['reward']?>" required>
                                 </div>
                             </div>
                         </div>
@@ -216,7 +221,7 @@ if (isset($_POST['btnUpdate'])){
                                 </div>
                                 <div class='col-md-4'>
                                     <label for="exampleInputEmail1">reward5</label> 
-                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward5" required>
+                                    <input type="text" class="form-control" name="reward5" value="<?php echo $res[4]['reward']?>" required>
                                 </div>
                             </div>
                         </div>
@@ -228,7 +233,7 @@ if (isset($_POST['btnUpdate'])){
                                 </div>
                                 <div class='col-md-4'>
                                     <label for="exampleInputEmail1">reward6</label> 
-                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward6" required >
+                                    <input type="text" class="form-control"  name="reward6" value="<?php echo $res[5]['reward']?>" required >
                                 </div>
                             </div>
                         </div>
@@ -240,7 +245,7 @@ if (isset($_POST['btnUpdate'])){
                                 </div>
                                 <div class='col-md-4'>
                                     <label for="exampleInputEmail1">reward7</label> 
-                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward7" required>
+                                    <input type="text" class="form-control" name="reward7" value="<?php echo $res[6]['reward']?>" required>
                                 </div>
                             </div>
                         </div>
@@ -252,7 +257,7 @@ if (isset($_POST['btnUpdate'])){
                                 </div>
                                 <div class='col-md-4'>
                                     <label for="exampleInputEmail1">reward8</label> 
-                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px"  name="reward8" required >
+                                    <input type="text" class="form-control"  name="reward8" value="<?php echo $res[7]['reward']?>" required >
                                 </div>
                             </div>
                         </div>
@@ -264,7 +269,7 @@ if (isset($_POST['btnUpdate'])){
                                 </div>
                                 <div class='col-md-4'>
                                     <label for="exampleInputEmail1">reward9</label> 
-                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward9" required>
+                                    <input type="text" class="form-control" name="reward9" value="<?php echo $res[8]['reward']?>" required>
                                 </div>
                             </div>
                         </div>
@@ -276,7 +281,7 @@ if (isset($_POST['btnUpdate'])){
                                 </div>
                                 <div class='col-md-4'>
                                     <label for="exampleInputEmail1">reward10</label> 
-                                    <input type="text" class="form-control" style="border:2px solid #a8e88a!important;border-radius:8px" name="reward10" required>
+                                    <input type="text" class="form-control" name="reward10" value="<?php echo $res[9]['reward']?>" required>
                                 </div>
                             </div>
                         </div>

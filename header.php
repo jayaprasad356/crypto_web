@@ -92,7 +92,7 @@ $db->sql("SET NAMES 'utf8'");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css" integrity="sha256-tBxlolRHP9uMsEFKVk+hk//ekOlXOixLKvye5W2WR5c=" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js" integrity="sha256-CtKylYan+AJuoH8jrMht1+1PMhMqrKnB8K5g012WN5I=" crossorigin="anonymous"></script>
  
- <style>
+ <!-- <style>
 nav{
         background-color: #ac94d3!important;
 }
@@ -115,7 +115,7 @@ li a{
     border-radius:30px 0px 0px 30px;
 }
 
- </style>
+ </style> -->
 
 </head>
 

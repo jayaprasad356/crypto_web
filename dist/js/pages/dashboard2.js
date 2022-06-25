@@ -115,8 +115,8 @@ $(function () {
     },
     {
       value: 600,
-      color: "#e5a868",
-      highlight: "#e5a868",
+      color: "#00c0ef",
+      highlight: "#00c0ef",
       label: "Safari"
     },
     {

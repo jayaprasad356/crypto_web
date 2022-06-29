@@ -60,7 +60,7 @@ if ($num == 1){
     $reward8 = $res[7]['reward'];
     $reward9 = $res[8]['reward'];
     $reward10 = $res[9]['reward'];
-    $reward11 = $res[10]['reward'];
+
 
     if ($steps >= 0 && $steps <= $reward1){
         $reward = $reward1;
@@ -82,8 +82,6 @@ if ($num == 1){
         $reward = $reward9;
     }elseif ($steps > $reward9 && $steps <= $reward10){
         $reward = $reward10;
-    }elseif ($steps > $reward10 && $steps <= $reward11){
-        $reward = $reward11;
     }else{
         $reward = 0;
     }
@@ -93,11 +91,13 @@ if ($num == 1){
     $db->sql($sql);
     $response['success'] = true;
     $response['message'] = "Steps Saved Successfully";
+    $response['data'] = NULL;
     print_r(json_encode($response));
 }
 else{
     $response['success'] = false;
     $response['message'] = "User Not Found";
+    $response['data'] = NULL;
     print_r(json_encode($response));
 }
 

@@ -53,7 +53,7 @@ if ($num == 1){
     print_r(json_encode($response));
 }
 else{
-    $sql = "INSERT INTO users(`name`,`email`,`password`,`gender`,`registered_date`)VALUES('$name','$email','$password','$gender','$registered_date')";
+    $sql = "INSERT INTO users(`name`,`email`,`password`,`gender`,`registered_date`,`steps`,`reward`)VALUES('$name','$email','$password','$gender','$registered_date',0,0)";
     $db->sql($sql);
     $res = $db->getResult();
     $sql = "SELECT * FROM users WHERE email ='$email'";

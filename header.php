@@ -213,6 +213,12 @@ li a{
                     </ul>
                 </li>
                 <li class="treeview">
+                    <a href="earnings.php">
+                        <i class="fa fa-bullseye"></i>
+                        <span>Earnings</span>
+                    </a>
+                </li>
+                <li class="treeview">
                     <a href="settings.php">
                         <i class="fa fa-bullseye"></i>
                         <span>Settings</span>

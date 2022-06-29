@@ -108,11 +108,75 @@ if (isset($_GET['table']) && $_GET['table'] == 'users')
         $tempRow['name'] = $row['name'];
         $tempRow['email'] = $row['email'];
         $tempRow['gender'] = $row['gender'];
-        $tempRow['weight'] = $row['weight'];
-        $tempRow['height'] = $row['height'];
-        $tempRow['age'] = $row['age'];
-        $operate= '<a href="edit-users.php?id=' . $row['id'] . '"><i class="fa fa-edit"></i></a>';
-        $tempRow['operate'] = $operate;
+        $tempRow['wallet_balance'] = $row['wallet_balance'];
+        $tempRow['wallet_address'] = $row['wallet_address'];
+        
+        
+        
+        $rows[] = $tempRow;
+    }
+    $bulkData['rows'] = $rows;
+    print_r(json_encode($bulkData));
+}
+if (isset($_GET['table']) && $_GET['table'] == 'earnings') 
+{
+    $offset = 0;
+    $limit = 10;
+    $where = '';
+    $sort = 'id';
+    $order = 'DESC';
+    if (isset($_GET['offset']))
+        $offset = $db->escapeString($_GET['offset']);
+    if (isset($_GET['limit']))
+        $limit = $db->escapeString($_GET['limit']);
+    if (isset($_GET['sort']))
+        $sort = $db->escapeString($_GET['sort']);
+    if (isset($_GET['order']))
+        $order = $db->escapeString($_GET['order']);
+
+    if (isset($_GET['search']) && !empty($_GET['search'])) {
+        $search = $db->escapeString($_GET['search']);
+        $where .= "WHERE users.name like '%" . $search . "%' OR users.id like '%" . $search . "%' OR users.email like '%" . $search . "%' ";
+    }
+    if (isset($_GET['sort'])){
+        $sort = $db->escapeString($_GET['sort']);
+
+    }
+    if (isset($_GET['order'])){
+        $order = $db->escapeString($_GET['order']);
+
+    }
+    $sql = "SELECT COUNT(rewards.id) as total FROM `users` LEFT JOIN rewards ON users.id = rewards.user_id " . $where;
+    $db->sql($sql);
+    $res = $db->getResult();
+   
+    
+    foreach ($res as $row)
+        $total = $row['total'];
+       
+    $sql = "SELECT *,users.id AS id,rewards.reward AS reward,rewards.steps AS steps FROM users LEFT JOIN rewards ON users.id = rewards.user_id " . $where ;
+    $db->sql($sql);
+    $res = $db->getResult();
+    
+    $bulkData = array();
+    $bulkData['total'] = $total;
+   
+    
+    $rows = array();
+    $tempRow = array();
+
+   
+    
+    foreach ($res as $row) {
+
+    
+        $tempRow['id'] = $row['id'];
+        $tempRow['name'] = $row['name'];
+        $tempRow['email'] = $row['email'];
+        $tempRow['reward'] = $row['reward'];
+        $tempRow['steps'] = $row['steps'];
+        $tempRow['reward_date'] = $row['reward_date'];
+        
         
         
         $rows[] = $tempRow;

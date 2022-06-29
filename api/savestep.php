@@ -47,6 +47,48 @@ $db->sql($sql);
 $res = $db->getResult();
 $num = $db->numRows($res);
 if ($num == 1){
+    $sql = "SELECT * FROM reward_settings";
+    $db->sql($sql);
+    $res = $db->getResult();
+    $reward1 = $res[0]['reward'];
+    $reward2 = $res[1]['reward'];
+    $reward3 = $res[2]['reward'];
+    $reward4 = $res[3]['reward'];
+    $reward5 = $res[4]['reward'];
+    $reward6 = $res[5]['reward'];
+    $reward7 = $res[6]['reward'];
+    $reward8 = $res[7]['reward'];
+    $reward9 = $res[8]['reward'];
+    $reward10 = $res[9]['reward'];
+    $reward11 = $res[10]['reward'];
+
+    if ($steps >= 0 && $steps <= $reward1){
+        $reward = $reward1;
+    }elseif ($steps > $reward1 && $steps <= $reward2){
+        $reward = $reward2;
+    }elseif ($steps > $reward2 && $steps <= $reward3){
+        $reward = $reward3;
+    }elseif ($steps > $reward3 && $steps <= $reward4){
+        $reward = $reward4;
+    }elseif ($steps > $reward4 && $steps <= $reward5){
+        $reward = $reward5;
+    }elseif ($steps > $reward5 && $steps <= $reward6){
+        $reward = $reward6;
+    }elseif ($steps > $reward6 && $steps <= $reward7){
+        $reward = $reward7;
+    }elseif ($steps > $reward7 && $steps <= $reward8){
+        $reward = $reward8;
+    }elseif ($steps > $reward8 && $steps <= $reward9){
+        $reward = $reward9;
+    }elseif ($steps > $reward9 && $steps <= $reward10){
+        $reward = $reward10;
+    }elseif ($steps > $reward10 && $steps <= $reward11){
+        $reward = $reward11;
+    }else{
+        $reward = 0;
+    }
+    $sql = "UPDATE `users` SET `steps`= steps + $steps,`reward` = '$reward' WHERE id=" . $user_id;
+    $db->sql($sql);
     $sql = "INSERT INTO steps(`user_id`,`date`,`steps`,`calories`,`earn`)VALUES('$user_id','$date','$steps','$calories','$steps')";
     $db->sql($sql);
     $response['success'] = true;

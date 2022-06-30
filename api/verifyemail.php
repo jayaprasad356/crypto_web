@@ -21,6 +21,7 @@ $sql = "SELECT * FROM users WHERE email ='$email'";
 $db->sql($sql);
 $res = $db->getResult();
 $num = $db->numRows($res);
+$registered_date =date("Y-m-d");
 if ($num == 1){
     $response['success'] = false;
     $response['message'] = "Email ID Already Registered";
@@ -28,7 +29,7 @@ if ($num == 1){
     print_r(json_encode($response));
 }
 else{
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT * FROM users WHERE registered_date ='$registered_date'";
     $db->sql($sql);
     $res = $db->getResult();
     $num = $db->numRows($res);
@@ -39,7 +40,7 @@ else{
     if($num >=$max_user){
             $response['success'] = false;
             $response['message'] = "Maximum users reached";
-            $response['data'] = $num;
+            $response['data'] = NULL;
             print_r(json_encode($response));
     }
     else{ 

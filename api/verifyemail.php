@@ -33,10 +33,10 @@ else{
     $db->sql($sql);
     $res = $db->getResult();
     $num = $db->numRows($res);
-    $sql = "SELECT * FROM settings";
+    $sql = "SELECT * FROM app_settings";
     $db->sql($sql);
     $res = $db->getResult();
-    $max_user =$res[0]['max_user'];
+    $max_user =$res[0]['max_users'];
     if($num >=$max_user){
             $response['success'] = false;
             $response['message'] = "Maximum users reached";

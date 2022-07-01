@@ -35,10 +35,31 @@ if (empty($_POST['gender'])) {
     print_r(json_encode($response));
     return false;
 }
+if (empty($_POST['weight'])) {
+    $response['success'] = false;
+    $response['message'] = "Weight is Empty";
+    print_r(json_encode($response));
+    return false;
+}
+if (empty($_POST['height'])) {
+    $response['success'] = false;
+    $response['message'] = "Height is Empty";
+    print_r(json_encode($response));
+    return false;
+}
+if (empty($_POST['age'])) {
+    $response['success'] = false;
+    $response['message'] = "Age is Empty";
+    print_r(json_encode($response));
+    return false;
+}
 $name = $db->escapeString($_POST['name']);
 $email = $db->escapeString($_POST['email']);
 $password = $db->escapeString($_POST['password']);
 $gender = $db->escapeString($_POST['gender']);
+$weight = $db->escapeString($_POST['weight']);
+$height = $db->escapeString($_POST['height']);
+$age = $db->escapeString($_POST['age']);
 $registered_date =date("Y-m-d");
 $sql = "SELECT * FROM users WHERE email ='$email'";
 $db->sql($sql);
@@ -51,7 +72,7 @@ if ($num == 1){
     print_r(json_encode($response));
 }
 else{
-    $sql = "INSERT INTO users(`name`,`email`,`password`,`gender`,`registered_date`,`steps`,`reward`)VALUES('$name','$email','$password','$gender','$registered_date',0,0)";
+    $sql = "INSERT INTO users(`name`,`email`,`password`,`gender`,`registered_date`,`steps`,`reward`,`weight`,`height`,`age`)VALUES('$name','$email','$password','$gender','$registered_date',0,0,'$weight','$height','$age')";
     $db->sql($sql);
     $res = $db->getResult();
     $sql = "SELECT * FROM users WHERE email ='$email'";
@@ -63,6 +84,11 @@ else{
         $temp['email'] = $row['email'];
         $temp['password'] = $row['password'];
         $temp['registered_date'] = $row['registered_date'];
+        $temp['steps'] = $row['steps'];
+        $temp['reward'] = $row['reward'];
+        $temp['weight'] = $row['weight'];
+        $temp['height'] = $row['height'];
+        $temp['age'] = $row['age'];
         $rows[] = $temp;
     }
     $response['success'] = true;

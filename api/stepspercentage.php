@@ -30,7 +30,8 @@ if ($num == 1) {
     $calsteps = ($totalsteps / 20000) * 100;
     $response['success'] = true;
     $response['message'] = "Successfully";
-    $response['steps'] = round($calsteps);
+    $response['steps'] = strval(round($calsteps));
+    $response['totalsteps'] = strval(round($totalsteps));
     $response['data'] = NULL;
 
 

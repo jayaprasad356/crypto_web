@@ -29,8 +29,9 @@ if (isset($_POST['btnAdd'])) {
 
         if (!empty($title) && !empty($description))
         {
+            $datetime = Date('Y-m-d H:i:s');
             
-			$sql = "INSERT INTO notifications (title,description) VALUES('$title','$description')";
+			$sql = "INSERT INTO notifications (title,description,date_created) VALUES('$title','$description','$datetime')";
             $db->sql($sql);
             $notification_result = $db->getResult();
             if (!empty($notification_result)) {

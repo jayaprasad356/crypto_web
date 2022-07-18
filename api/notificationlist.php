@@ -10,6 +10,12 @@ date_default_timezone_set('Asia/Kolkata');
 include_once('../includes/crud.php');
 $db = new Database();
 $db->connect();
+if (empty($_POST['notify'])) {
+    $response['success'] = false;
+    $response['message'] = "Notify is Empty";
+    print_r(json_encode($response));
+    return false;
+}
 $sql = "SELECT * FROM `notifications` ORDER BY `id` DESC";
 $db->sql($sql);
 $res = $db->getResult();

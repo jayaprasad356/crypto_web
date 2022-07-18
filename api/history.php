@@ -24,7 +24,7 @@ if (empty($_POST['user_id'])) {
 }
 $user_id= $db->escapeString($_POST['user_id']);
 $month= $db->escapeString($_POST['month']);
-$sql = "SELECT * FROM `steps` WHERE DATE_FORMAT(date, '%m') = 05 AND user_id ='$user_id' ORDER BY date DESC";
+$sql = "SELECT * FROM `steps` WHERE DATE_FORMAT(date, '%m') = $month AND user_id ='$user_id' ORDER BY date DESC";
 // $sql = "SELECT * FROM steps where substring(date, 9, 2) = $month and user_id = '$user_id' ORDER BY date DESC";
 $db->sql($sql);
 $res = $db->getResult();

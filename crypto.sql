@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2022 at 09:00 AM
+-- Generation Time: Aug 26, 2022 at 12:12 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -96,25 +96,30 @@ INSERT INTO `rewards` (`id`, `user_id`, `reward`, `steps`, `reward_date`) VALUES
 
 CREATE TABLE `reward_settings` (
   `id` int(11) NOT NULL,
-  `value` text DEFAULT NULL,
-  `reward` text DEFAULT NULL
+  `step` text DEFAULT NULL,
+  `reward` text DEFAULT NULL,
+  `bronze` text DEFAULT NULL,
+  `silver` text DEFAULT NULL,
+  `gold` text DEFAULT NULL,
+  `diamond` text DEFAULT NULL,
+  `platinum` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `reward_settings`
 --
 
-INSERT INTO `reward_settings` (`id`, `value`, `reward`) VALUES
-(1, '2000', '1'),
-(2, '4000', '2'),
-(3, '6000', '200'),
-(4, '8000', '200'),
-(5, '10000', '200'),
-(6, '12000', '400'),
-(7, '14000', '500'),
-(8, '16000', '600'),
-(9, '18000', '700'),
-(10, '20000', '300');
+INSERT INTO `reward_settings` (`id`, `step`, `reward`, `bronze`, `silver`, `gold`, `diamond`, `platinum`) VALUES
+(1, '2000', '1', '50', '5', '90', '70', '1'),
+(2, '4000', '2', '567', '7', '9', '8', '9'),
+(3, '6000', '200', '89', '90', '66', '8', '78'),
+(4, '8000', '200', '65', '34', '87', '77', '87'),
+(5, '10000', '200', '55', '78', '78', '89', '90'),
+(6, '12000', '400', '33', '67', '88', '90', '88'),
+(7, '14000', '500', '8', '9', '67', '89', '34'),
+(8, '16000', '600', '3', '45', '65', '54', '45'),
+(9, '18000', '700', '3', '5', '6', '9', '3'),
+(10, '20000', '300', '43', '56', '87', '875', '76');
 
 -- --------------------------------------------------------
 

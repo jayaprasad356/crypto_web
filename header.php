@@ -219,6 +219,12 @@ li a{
                     </a>
                 </li>
                 <li class="treeview">
+                    <a href="badges.php">
+                        <i class="fa fa-bullseye"></i>
+                        <span>Badge</span>
+                    </a>
+                </li>
+                <li class="treeview">
                     <a href="settings.php">
                         <i class="fa fa-bullseye"></i>
                         <span>Settings</span>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2022 at 12:12 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Generation Time: Sep 03, 2022 at 09:26 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,6 +39,31 @@ CREATE TABLE `app_settings` (
 
 INSERT INTO `app_settings` (`id`, `min_balance`, `max_users`) VALUES
 (1, 50, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `badges`
+--
+
+CREATE TABLE `badges` (
+  `id` int(11) NOT NULL,
+  `badge` text DEFAULT NULL,
+  `badge_value` text DEFAULT NULL,
+  `from_value` text DEFAULT NULL,
+  `to_value` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `badges`
+--
+
+INSERT INTO `badges` (`id`, `badge`, `badge_value`, `from_value`, `to_value`) VALUES
+(1, 'bronze', '5', '1', '2'),
+(2, 'silver', '45', '2', '3'),
+(3, 'gold', '100', '3', '4'),
+(4, 'diamond', '25', '4', '5'),
+(5, 'platinum', '45', '5', '6');
 
 -- --------------------------------------------------------
 
@@ -229,6 +254,12 @@ ALTER TABLE `app_settings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `badges`
+--
+ALTER TABLE `badges`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `notifications`
 --
 ALTER TABLE `notifications`
@@ -267,6 +298,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `app_settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `badges`
+--
+ALTER TABLE `badges`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `notifications`
